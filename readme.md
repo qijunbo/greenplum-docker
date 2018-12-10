@@ -42,6 +42,10 @@ gpactivatestandby
 ```
 > Reference: https://my.oschina.net/javacy/blog/908929
 
+### check stats
+```
+gpstate -s
+```
 
 ##Questions?
 
