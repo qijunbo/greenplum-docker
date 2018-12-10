@@ -16,6 +16,14 @@ services:
     command: tail -f /dev/null
     volumes:
       - db_seg_2:/var/lib/gpdb/
+  db_standby:
+    build: .
+    environment:
+       - GP_NODE=segment
+    hostname: db_standby
+    command: tail -f /dev/null
+    volumes:
+      - db_standby:/var/lib/gpdb/
   db_master_1:
     build: .
     environment:
@@ -28,12 +36,15 @@ services:
     depends_on: 
       - db_seg_1
       - db_seg_2
+      - db_standby
     ports:
       - "5432:5432"
     links:
       - db_seg_1:seg1
       - db_seg_2:seg2
+      - db_standby:standby
 volumes:
   db_master_1:
   db_seg_1:
   db_seg_2:
+  db_standby:

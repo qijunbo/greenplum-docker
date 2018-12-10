@@ -1,6 +1,6 @@
 # greenplum-docker
 Docker for greenplum (5.3.0) database.
-
+ 
 ## Build
 docker build -t ubuntu-gpdb .
 
@@ -28,6 +28,12 @@ This file contains the name of the segments that the master connects to. This is
 ###  gpinitsys
 Configuration file for setting up the greenplum cluster.
 
+###  add more hosts
+edit tow files: 
+>multihost 
+	add host name in multihost
+>docker-compose.yml
+	add hostconfigs in this file.
 
 ##Questions?
 
