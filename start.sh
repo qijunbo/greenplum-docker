@@ -1,2 +1,2 @@
-chmod +x *sh
-docker-compose up -d
+#chmod +x *sh
+sudo docker-compose up -d

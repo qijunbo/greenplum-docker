@@ -9,13 +9,13 @@ docker build -t ubuntu-gpdb .
 From the command line execute the following command:
 docker run -it -p 5432:5432 --hostname=db_master_1  --name reflect-gpdb ubuntu-gpdb bash
 
-Connect to your host on port 5432 user/pass is gpadmin/dataroad
+Connect to your host on port 5432 user/pass is gpadmin/sunway123###
 
 
 ## Multi Node Docker-Compose
 From the command line execute the following command: docker-compose up
 
-You can connect to your host using PGADMIN on port 5432 user/pass is gpadmin/dataroad
+You can connect to your host using PGADMIN on port 5432 user/pass is gpadmin/sunway123###
 
 
 

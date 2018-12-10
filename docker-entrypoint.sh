@@ -11,7 +11,7 @@ then
         yes | cp $HOSTFILE hostlist
         gpssh-exkeys -f hostlist
         echo "Key exchange complete"
-        gpinitsystem -a  -c gpinitsys --su_password=dataroad
+        gpinitsystem -a  -c gpinitsys --su_password=sunway123###
         echo "Master node initialized"
         # receive connection from anywhere.. This should be changed!!
         echo "host all all 0.0.0.0/0 md5" >>/var/lib/gpdb/data/gpmaster/gpsne-1/pg_hba.conf
