@@ -35,6 +35,7 @@ services:
     command: tail -f /dev/null
     volumes:
       - db_master_1:/var/lib/gpdb/
+      - ./multihost:/var/lib/gpdb/setup/hostlist
     depends_on: 
       - db_seg_1
       - db_seg_2
