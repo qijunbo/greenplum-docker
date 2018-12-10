@@ -21,6 +21,8 @@ services:
     environment:
        - GP_NODE=segment
     hostname: db_standby
+    ports:
+      - "5431:5432"
     command: tail -f /dev/null
     volumes:
       - db_standby:/var/lib/gpdb/

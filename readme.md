@@ -35,6 +35,14 @@ edit tow files:
 >docker-compose.yml
 	add hostconfigs in this file.
 
+###  how to activate the standby as master
+> execute this command on db_standby node
+```
+gpactivatestandby
+```
+> Reference: https://my.oschina.net/javacy/blog/908929
+
+
 ##Questions?
 
 chad@dataroadtech.com
