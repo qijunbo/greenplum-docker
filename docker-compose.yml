@@ -2,6 +2,7 @@ version: "3"
 services:
   db_seg_1:
     build: .
+    image: qijunbo/greenplum
     environment:
        - GP_NODE=segment
     hostname: db_seg_1
@@ -13,6 +14,7 @@ services:
       - ./limits.conf:/etc/security/limits.conf
   db_seg_2:
     build: .
+    image: qijunbo/greenplum
     environment:
        - GP_NODE=segment
     hostname: db_seg_2
@@ -24,6 +26,7 @@ services:
       - ./limits.conf:/etc/security/limits.conf
   db_standby:
     build: .
+    image: qijunbo/greenplum
     environment:
        - GP_NODE=segment
     hostname: db_standby
@@ -37,6 +40,7 @@ services:
       - ./limits.conf:/etc/security/limits.conf
   db_master_1:
     build: .
+    image: qijunbo/greenplum
     environment:
        - GP_NODE=master
        - HOSTFILE=multihost
