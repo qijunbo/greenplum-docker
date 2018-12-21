@@ -61,7 +61,7 @@ ENCODING=UNICODE
 #### will be created. The number of mirror locations must equal the
 #### number of primary locations as specified in the 
 #### DATA_DIRECTORY parameter.
-#declare -a MIRROR_DATA_DIRECTORY=(/data1/mirror /data1/mirror /data1/mirror /data2/mirror /data2/mirror /data2/mirror)
+declare -a MIRROR_DATA_DIRECTORY=(/data1/mirror /data1/mirror /data1/mirror /data2/mirror /data2/mirror /data2/mirror)
 
 
 ################################################

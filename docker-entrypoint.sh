@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo /usr/sbin/sshd
+sudo sysctl -p
 
 m="master"
 if [ "$GP_NODE" == "$m" ]
