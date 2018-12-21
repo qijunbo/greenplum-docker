@@ -50,6 +50,8 @@ RUN chown -R gpadmin:gpadmin /var/lib/gpdb
 
 #sshd must exist for gpdb monitor_master.sh
 RUN echo 'gpadmin ALL=(ALL) NOPASSWD:/usr/sbin/sshd' >> /etc/sudoers
+#sysctl must exist for docker_entripoint.sh 
+RUN echo 'gpadmin ALL=(ALL) NOPASSWD:/usr/sbin/sysctl' >> /etc/sudoers
 
 
 USER gpadmin
