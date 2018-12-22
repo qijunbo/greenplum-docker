@@ -12,6 +12,12 @@ services:
       - db_seg_1:/var/lib/gpdb/
       - ./sysctl.conf:/etc/sysctl.conf
       - ./limits.conf:/etc/security/limits.conf
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+
   db_seg_2:
     build: .
     image: qijunbo/greenplum
@@ -24,6 +30,12 @@ services:
       - db_seg_2:/var/lib/gpdb/
       - ./sysctl.conf:/etc/sysctl.conf
       - ./limits.conf:/etc/security/limits.conf
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+
   db_standby:
     build: .
     image: qijunbo/greenplum
@@ -38,6 +50,12 @@ services:
       - db_standby:/var/lib/gpdb/
       - ./sysctl.conf:/etc/sysctl.conf
       - ./limits.conf:/etc/security/limits.conf
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+
   db_master_1:
     build: .
     image: qijunbo/greenplum
@@ -62,8 +80,27 @@ services:
       - db_seg_1:seg1
       - db_seg_2:seg2
       - db_standby:standby
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "9999:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
 volumes:
   db_master_1:
   db_seg_1:
   db_seg_2:
   db_standby:
+networks:
+  webnet:
