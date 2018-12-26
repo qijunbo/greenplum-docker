@@ -21,7 +21,9 @@ RUN mkdir -p /var/lib/gpdb/data/gpdata1
 RUN mkdir /var/lib/gpdb/data/gpdata2
 # create master directory
 RUN mkdir /var/lib/gpdb/data/gpmaster
-
+# create mirror directory
+RUN mkdir -p /var/lib/gpdb/data/mirror/gpdata1
+RUN mkdir /var/lib/gpdb/data/mirror/gpdata2
 
 # set locale
 RUN locale-gen en_US.UTF-8  
